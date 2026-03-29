@@ -100,7 +100,7 @@ function rPlat(pid){
 
 function rOv(){
   const all={t:CH.length,d:CH.filter(c=>PR.has(c.id)).length};const ap=pct(all.d,all.t);
-  let h=`<h2 class="pt">Overview</h2><p class="pd">18-month offensive security roadmap. Cross-device sync via Supabase.</p><div class="sg"><div class="sc"><div class="l">Total</div><div class="v">${ap}%</div><div class="su">${all.d} / ${all.t}</div></div>`;
+  let h=`<h2 class="pt">Only way to fail is to stop</h2><p class="pd">Offensive security roadmap.</p><div class="sg"><div class="sc"><div class="l">Total</div><div class="v">${ap}%</div><div class="su">${all.d} / ${all.t}</div></div>`;
   P.sort((a,b)=>a.sort_order-b.sort_order).forEach(p=>{const c=cnt(p.id);h+=`<div class="sc"><div class="l">${p.name}</div><div class="v">${c.d}/${c.t}</div><div class="su">${pct(c.d,c.t)}%</div></div>`});
   h+=`</div><h3 class="st">Certification Timeline</h3>`;
   CERTS.forEach((c,i)=>{h+=`<div class="ci"><div class="ck ${PR.has(c.id)?'on':''}" onclick="tp('${c.id}')"></div><div style="font-family:var(--m);font-size:11px;color:var(--mu);width:24px">${String(i+1).padStart(2,'0')}</div><div style="flex:1"><div class="nm">${c.n} — ${c.f}</div></div><div class="me">${c.mo}<br>${c.co}</div></div>`});
@@ -127,7 +127,7 @@ function eAll(pid){PH.filter(p=>p.platform_id===pid).forEach((_,i)=>opn.add(pid+
 function cAll(){opn.clear();rn()}
 function sw(t){if(t==='_ap'){mPlat();return}tab=t;opn.clear();rn()}
 function tPh(k){opn.has(k)?opn.delete(k):opn.add(k);rn()}
-function disc(){if(confirm('Disconnect? Data stays in Supabase.')){localStorage.removeItem('sb_cfg');location.reload()}}
+function disc(){if(confirm('Disconnect?')){localStorage.removeItem('sb_cfg');location.reload()}}
 
 function rn(){
   let m='';
