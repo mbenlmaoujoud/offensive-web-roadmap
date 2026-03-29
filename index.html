@@ -41,6 +41,7 @@ input[type=text],input[type=password],textarea,select{font-family:var(--s);font-
 .toast{position:fixed;bottom:20px;right:20px;background:var(--sf);border:1px solid var(--gn);color:var(--gn);padding:10px 16px;border-radius:var(--r);font-size:12px;z-index:200;animation:fi .2s}@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .ab{background:var(--ad);border:1px solid rgba(224,82,82,.25);border-radius:var(--r);padding:8px 14px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--ac)}
 .db{background:none;border:none;color:var(--mu);cursor:pointer;font-size:11px;padding:2px 6px;margin-left:4px;border-radius:3px;transition:all .1s;opacity:0}.cr:hover .db,.phh:hover .db{opacity:1}.db:hover{color:var(--ac);background:var(--ad)}
+.qc{text-align:center;padding:40px 20px;margin-bottom:28px}.qm{font-size:48px;line-height:1;color:var(--ac);margin-bottom:12px;opacity:.3}.qt{font-size:28px;font-weight:600;color:var(--br);line-height:1.4;letter-spacing:-.3px;margin-bottom:16px}.qa{font-size:12px;color:var(--mu);letter-spacing:.5px;text-transform:uppercase}
 @media(max-width:768px){.side{width:100%;height:auto;position:relative;flex-direction:row;overflow-x:auto;padding:10px 0}.mn{margin-left:0;padding:16px}.logo,.ns,.sft{display:none}.ni{padding:8px 14px;white-space:nowrap;border-left:none;border-bottom:2px solid transparent}.ni.a{border-left:none;border-bottom-color:var(--ac)}.sg{grid-template-columns:1fr 1fr}.rg{grid-template-columns:1fr}}
 </style>
 </head>
@@ -100,7 +101,7 @@ function rPlat(pid){
 
 function rOv(){
   const all={t:CH.length,d:CH.filter(c=>PR.has(c.id)).length};const ap=pct(all.d,all.t);
-  let h=`<h2 class="pt">Only way to fail is to stop</h2><p class="pd">Offensive security roadmap.</p><div class="sg"><div class="sc"><div class="l">Total</div><div class="v">${ap}%</div><div class="su">${all.d} / ${all.t}</div></div>`;
+  let h=`<div class="qc"><div class="qm">"</div><div class="qt">Only way to fail is to stop</div><div class="qa">Offensive Security Roadmap</div></div><div class="sg"><div class="sc"><div class="l">Total</div><div class="v">${ap}%</div><div class="su">${all.d} / ${all.t}</div></div>`;
   P.sort((a,b)=>a.sort_order-b.sort_order).forEach(p=>{const c=cnt(p.id);h+=`<div class="sc"><div class="l">${p.name}</div><div class="v">${c.d}/${c.t}</div><div class="su">${pct(c.d,c.t)}%</div></div>`});
   h+=`</div><h3 class="st">Certification Timeline</h3>`;
   CERTS.forEach((c,i)=>{h+=`<div class="ci"><div class="ck ${PR.has(c.id)?'on':''}" onclick="tp('${c.id}')"></div><div style="font-family:var(--m);font-size:11px;color:var(--mu);width:24px">${String(i+1).padStart(2,'0')}</div><div style="flex:1"><div class="nm">${c.n} — ${c.f}</div></div><div class="me">${c.mo}<br>${c.co}</div></div>`});
